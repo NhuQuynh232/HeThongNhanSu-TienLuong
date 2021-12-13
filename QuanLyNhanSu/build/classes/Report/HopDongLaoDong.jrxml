@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 4.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HopDongLaoDong" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="QuanLyNhanSu"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="MaNV" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT "NhanVien"."SoDienThoai",
+	"NhanVien"."TenNV",
+	"HopDongLaoDong"."MaHopDong",
+	"HopDongLaoDong"."NgayHieuLuc",
+	"HopDongLaoDong"."NgayKy",
+	"HopDongLaoDong"."NgayKetThuc",
+	"HopDongLaoDong"."MaBP",
+	"HopDongLaoDong"."MaCV",
+	"HopDongLaoDong"."LuongCoBan",
+	"HopDongLaoDong"."PhuCap",
+	"HopDongLaoDong"."Loai",
+	"HopDongLaoDong"."BaoHiem",
+	"BoPhan"."TenBP",
+	"ChucVu"."TenCV",
+	"HopDongLaoDong"."MaNV",
+	"NhanVien"."NgaySinh",
+	"NhanVien"."QuocTich",
+	"NhanVien"."DiaChi"
+FROM "HopDongLaoDong"
+	INNER JOIN "NhanVien" ON 
+	 "HopDongLaoDong"."MaNV" = "NhanVien"."MaNV" 
+	INNER JOIN "BoPhan" ON 
+	 "NhanVien"."MaBP" = "BoPhan"."MaBP" 
+	 AND "HopDongLaoDong"."MaBP" = "BoPhan"."MaBP" 
+	INNER JOIN "ChucVu" ON 
+	 "NhanVien"."MaCV" = "ChucVu"."MaCV" 
+	 AND "HopDongLaoDong"."MaCV" = "ChucVu"."MaCV" 
+WHERE 
+	 "HopDongLaoDong"."MaNV" = $P{MaNV}]]>
+	</queryString>
+	<field name="SoDienThoai" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SoDienThoai"/>
+		<property name="com.jaspersoft.studio.field.label" value="SoDienThoai"/>
+	</field>
+	<field name="TenNV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TenNV"/>
+		<property name="com.jaspersoft.studio.field.label" value="TenNV"/>
+	</field>
+	<field name="MaHopDong" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="MaHopDong"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaHopDong"/>
+	</field>
+	<field name="NgayHieuLuc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NgayHieuLuc"/>
+		<property name="com.jaspersoft.studio.field.label" value="NgayHieuLuc"/>
+	</field>
+	<field name="NgayKy" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="NgayKy"/>
+		<property name="com.jaspersoft.studio.field.label" value="NgayKy"/>
+	</field>
+	<field name="NgayKetThuc" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="NgayKetThuc"/>
+		<property name="com.jaspersoft.studio.field.label" value="NgayKetThuc"/>
+	</field>
+	<field name="MaBP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaBP"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaBP"/>
+	</field>
+	<field name="MaCV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaCV"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaCV"/>
+	</field>
+	<field name="LuongCoBan" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="LuongCoBan"/>
+		<property name="com.jaspersoft.studio.field.label" value="LuongCoBan"/>
+	</field>
+	<field name="PhuCap" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PhuCap"/>
+		<property name="com.jaspersoft.studio.field.label" value="PhuCap"/>
+	</field>
+	<field name="Loai" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Loai"/>
+		<property name="com.jaspersoft.studio.field.label" value="Loai"/>
+	</field>
+	<field name="BaoHiem" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="BaoHiem"/>
+		<property name="com.jaspersoft.studio.field.label" value="BaoHiem"/>
+	</field>
+	<field name="TenBP" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TenBP"/>
+		<property name="com.jaspersoft.studio.field.label" value="TenBP"/>
+	</field>
+	<field name="TenCV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TenCV"/>
+		<property name="com.jaspersoft.studio.field.label" value="TenCV"/>
+	</field>
+	<field name="MaNV" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaNV"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaNV"/>
+	</field>
+	<field name="NgaySinh" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="NgaySinh"/>
+		<property name="com.jaspersoft.studio.field.label" value="NgaySinh"/>
+	</field>
+	<field name="QuocTich" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="QuocTich"/>
+		<property name="com.jaspersoft.studio.field.label" value="QuocTich"/>
+	</field>
+	<field name="DiaChi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DiaChi"/>
+		<property name="com.jaspersoft.studio.field.label" value="DiaChi"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="280" y="44" width="274" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[.......,ngày.....tháng.....năm.....]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="280" height="30"/>
+				<text><![CDATA[561A đường Điện Biên Phủ, P.25, Quận Bình Thạnh, TP HCM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="274" height="44"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Công ty cổ phần R2S]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="230" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="110" width="274" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Người sử dụng lao động (Bên A):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="140" width="280" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Võ Thùy Dung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="100" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Địa chỉ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="100" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Đại diện:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="200" width="280" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lầu 8, tòa nhà Pearl Plaza, 561A đường Điện Biên Phủ, P.25, Quận Bình Thạnh, TP HCM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="110" width="280" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Công ty cổ phần R2S]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="170" width="280" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Giám đốc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="100" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Chức vụ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="554" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HỢP ĐỒNG LAO ĐỘNG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="-30" width="554" height="90">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="20"/>
+				</textElement>
+				<text><![CDATA[- Căn cứ vào Bộ luật Lao Động số: 45/2019/QH14 ngày 20 tháng 11 năm 2019.
+- Căn cứ vào Nghị định 145/200/NĐ-CP quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật lao động về điều kiện lao động và quan hệ lao động
+- Căn cứ vào thông tư 10/2020/TT-BLĐTBXH huớng dẫn một số nội dung tại Bộ luật Lao động]]></text>
+			</staticText>
+		</band>
+		<band height="131">
+			<staticText>
+				<reportElement x="0" y="0" width="230" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Người lao động (Bên B):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="30" width="150" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TenNV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Họ và tên:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="130" y="60" width="150" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NgaySinh}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Ngày sinh:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="410" y="60" width="144" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{QuocTich}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="60" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Quốc tịch:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="90" width="150" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DiaChi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="90" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Địa chỉ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="90" width="144" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SoDienThoai}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="90" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Số điện thoại:]]></text>
+			</staticText>
+		</band>
+		<band height="296">
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Điều 1: Điều khoản chung]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="30" width="100" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Loai}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[1.Loại hợp đồng:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="130" y="60" width="100" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NgayHieuLuc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[2.Thời hạn HĐLĐ từ ngày:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="330" y="60" width="100" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NgayKetThuc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="230" y="60" width="100" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[đến ngày]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[3.Địa chỉ làm việc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="90" width="280" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lầu 8, tòa nhà Pearl Plaza, 561A đường Điện Biên Phủ, P.25, Quận Bình Thạnh, TP HCM]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="120" width="100" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TenBP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="120" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[4. Bộ phận làm việc:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="120" width="100" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TenCV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="230" y="120" width="120" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Chức vụ chuyên môn:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="150" width="554" height="110">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Nhiệm vụ công việc như sau:
+- Thực hiện công việc theo đúng chức danh chuyên môn của mình dưới sự quản lý, điều hành của Ban Giám đốc (và các cá nhân được bổ nhiệm hoặc ủy quyền phụ trách).
+- Phối hợp cùng với các bộ phận, phòng ban khác trong Công ty để phát huy tối đa hiệu quả công việc.
+- Hoàn thành những công việc khác tùy thuộc theo yêu cầu kinh doanh của Công ty và theo quyết định của Ban Giám đốc (và các cá nhân được bổ nhiệm hoặc ủy quyền phụ trách).
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="260" width="150" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Điều 2: Chế độ làm việc]]></text>
+			</staticText>
+		</band>
+		<band height="695">
+			<textField pattern="#,##0.###;#,##0.###-">
+				<reportElement x="140" y="387" width="100" height="30"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PhuCap}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;#,##0.###-">
+				<reportElement x="140" y="357" width="100" height="30"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LuongCoBan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="417" width="554" height="237">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[b) Các quyền lợi khác:
+- Khen thưởng: Người lao động được khuyến khích bằng vật chất và tinh thần khi có thành tích trong công tác hoặc theo quy định của công ty.
+- Chế độ nâng lương: Theo quy định của Nhà nước và quy chế tiền lương của Công ty. Người lao động hoàn thành tốt nhiệm vụ được giao, không vi phạm kỷ luật và/hoặc không trong thời gian xử lý kỷ luật lao động và đủ điều kiện về thời gian theo quy chế lương thì được xét nâng lương.
+- Chế độ nghỉ: Theo quy định chung của Nhà nước
++ Nghỉ hàng tuần: 1,5 ngày (Chiều Thứ 7 và ngày Chủ nhật).
++ Nghỉ hàng năm: Những nhân viên được ký Hợp đồng chính thức và có thâm niên công tác 12 tháng thì sẽ được nghỉ phép năm có hưởng lương (01 ngày phép/01 tháng, 12 ngày phép/01 năm). Nhân viên có thâm niên làm việc dưới 12 tháng thì thời gian nghỉ hằng năm được tính theo tỷ lệ tương ứng với số thời gian làm việc.
++ Nghỉ ngày Lễ: Các ngày nghỉ Lễ pháp định. Các ngày nghỉ lễ nếu trùng với ngày Chủ nhật thì sẽ được nghỉ bù vào ngày trước hoặc ngày kế tiếp tùy theo tình hình cụ thể mà Ban lãnh đạo Công ty sẽ chỉ đạo trực tiếp.
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="387" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Phụ cấp:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="357" width="100" height="30"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[VNĐ/tháng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="144" width="554" height="213">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Nghĩa vụ
+a) Thực hiện công việc với sự tận tâm, tận lực, đảm bảo hoàn thành công việc với hiệu quả cao nhất theo sự phân công, điều hành (bằng văn bản hoặc bằng miệng) của Ban Giám đốc trong Công ty (và các cá nhân được Ban Giám đốc bổ nhiệm hoặc ủy quyền phụ trách).
+b) Hoàn thành công việc được giao và sẵn sàng chấp nhận mọi sự điều động khi có yêu cầu
+c) Nắm rõ và chấp hành nghiêm túc kỷ luật lao động, an toàn lao động, vệ sinh lao động, PCCC, văn hóa công ty, nội quy lao động và các chủ trương, chính sách của Công ty.
+d) Bồi thường vi phạm và vật chất theo quy chế, nội quy của Công ty và pháp luật Nhà nước quy định.
+e) Tham dự đầy đủ, nhiệt tình các buổi huấn luyện, đào tạo, hội thảo do Bộ phận hoặc Công ty tổ chức.
+f) Thực hiện đúng cam kết trong HĐLĐ và các thỏa thuận bằng văn bản khác với Công ty.
+g) Đóng các loại bảo hiểm, các khoản thuế.... đầy đủ theo quy định của pháp luật.
+Quyền lợi
+a) Tiền lương và phụ cấp:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="480" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Điều 3: Nghĩa vụ và quyền lợi của người lao động]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="387" width="100" height="30"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[VNĐ/tháng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="357" width="130" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Lương cơ bản:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="654" width="480" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Điều 4: Nghĩa vụ và quyền lợi của người sử dụng lao động]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="554" height="97">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Từ ngày thứ 2 đến sáng ngày thứ 7:
+- Buổi sáng : 8h00 – 12h00
+- Buổi chiều: 13h30 – 17h30
+- Sáng ngày thứ 7: Làm việc từ 08h00 đến 12h00
+Thiết bị và công cụ làm việc sẽ được Công ty cấp phát tùy theo nhu cầu của công việc.
+Điều kiện an toàn và vệ sinh lao động tại nơi làm việc theo quy định của pháp luật hiện hành.
+]]></text>
+			</staticText>
+		</band>
+		<band height="612">
+			<staticText>
+				<reportElement x="0" y="180" width="554" height="160">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[b) Có quyền chuyển tạm thời lao động, ngừng việc, thay đổi, tạm thời chấm dứt Hợp đồng lao động và áp dụng các biện pháp kỷ luật theo quy định của Pháp luật hiện hành và theo nội quy của Công ty trong thời gian hợp đồng còn giá trị.
+c) Tạm hoãn, chấm dứt Hợp đồng, kỷ luật người lao động theo đúng quy định của Pháp luật, và nội quy lao động của Công ty.
+d) Có quyền đòi bồi thường, khiếu nại với cơ quan liên đới để bảo vệ quyền lợi của mình nếu người lao động vi phạm Pháp luật hay các điều khoản của hợp đồng này.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="370" width="554" height="104">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Trong quá trình thực hiện hợp đồng nếu một bên có nhu cầu thay đổi nội dung trong hợp đồng phải báo cho bên kia trước ít nhất 03 ngày và ký kết bản Phụ lục hợp đồng theo quy định của Pháp luật. Trong thời gian tiến hành thỏa thuận hai bên vẫn tuân theo hợp đồng lao động đã ký kết.
+Người lao động đọc kỹ, hiểu rõ và cam kết thực hiện các điều khoản và quy định ghi tại Hợp đồng lao động.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="340" width="480" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Điều 5: Những thỏa thuận khác]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="470" width="480" height="30">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Điều 6: Điều khoản thi hành]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="500" width="554" height="102">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[Những vấn đề về lao động không ghi trong Hợp đồng lao động này thì áp dụng theo quy định của Thỏa ước tập thể, nội quy lao động và Pháp luật lao động.
+Khi hai bên ký kết Phụ lục hợp đồng lao động thì nội dung của Phụ lục hợp đồng lao động cũng có giá trị như các nội dung của bản hợp đồng này.
+Hợp đồng này được lập thành 02 (hai) bản có giá trị như nhau, Hành chính nhân sự giữ 01 (một) bản, Người lao động giữ 01 (một) bản.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="-10" width="554" height="190">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="1_1_2" leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[1.	Nghĩa vụ
+Thực hiện đầy đủ những điều kiện cần thiết đã cam kết trong Hợp đồng lao động để người lao động đạt hiệu quả công việc cao. Bảo đảm việc làm cho người lao động theo Hợp đồng đã ký.
+Thanh toán đầy đủ, đúng thời hạn các chế độ và quyền lợi cho người lao động theo Hợp đồng lao động.
+Chốt sổ bảo hiểm và giao lại cho người lao động.
+2.	Quyền hạn
+a) Điều hành người lao động hoàn thành công việc theo Hợp đồng (bố trí, điều chuyển công việc cho người lao động theo đúng chức năng chuyên môn).
+
+]]></text>
+			</staticText>
+		</band>
+		<band height="77">
+			<staticText>
+				<reportElement x="55" y="5" width="120" height="60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Người lao động
+(Kí và ghi rõ họ tên)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="5" width="150" height="60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Người sử dụng lao động
+(Kí và ghi rõ họ tên)]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
